@@ -88,6 +88,15 @@
       </nav>
       <% end %>
     </header>
+
+    <!-- 検索フォーム部分テンプレート -->
+    <div class="search-box">
+      <% if user_signed_in? %>
+        <%= render 'searches/search', word: @word, range: @range, search: @search %>
+      <% end %>
+    </div>
+
+
     <%= flash[:notice] %>
     <%= yield %>
     <footer>
